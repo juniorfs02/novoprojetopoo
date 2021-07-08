@@ -9,6 +9,7 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.SwingConstants;
@@ -123,24 +124,28 @@ public class Index extends JFrame {
 		
 		JLabel lblNewLabel_1 = new JLabel("New label");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\win\\Documents\\facul\\ads.png"));
+		JLabel lblNewLabel_2 = new JLabel("");
+		Image imagens = new ImageIcon(this.getClass().getResource("/background.jpg")).getImage();
+		lblNewLabel_2.setIcon(new ImageIcon(imagens));
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
+					.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 533, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 789, Short.MAX_VALUE)
+							.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 956, Short.MAX_VALUE)
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(label, GroupLayout.PREFERRED_SIZE, 654, GroupLayout.PREFERRED_SIZE)
 							.addGap(0))
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(lblNewLabel_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addGap(536)
+							.addComponent(lblNewLabel_1, GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
 							.addGap(1022))))
 		);
 		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
+			gl_contentPane.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(0, 0, Short.MAX_VALUE)
 					.addComponent(lblNewLabel_1)
@@ -153,7 +158,12 @@ public class Index extends JFrame {
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(label, GroupLayout.PREFERRED_SIZE, 355, GroupLayout.PREFERRED_SIZE)))
 					.addContainerGap())
+				.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 328, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(1366, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
 	}
 }
+
