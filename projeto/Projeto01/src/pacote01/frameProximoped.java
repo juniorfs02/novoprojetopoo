@@ -11,15 +11,22 @@ import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.awt.event.ActionEvent;
 
 public class frameProximoped extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textCodPedido;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private JTextField textPPnome;
+	private JTextField textPPcodped;
+	private JTextField textPPlivro;
+	private JTextField textPPfrete;
+	private JTextField textPPprecot;
+	private JTextField textPPqtde;
+	private JTextField textPPcep;
 
 	/**
 	 * Launch the application.
@@ -49,13 +56,25 @@ public class frameProximoped extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		textCodPedido = new JTextField();
-		textCodPedido.setEditable(false);
-		textCodPedido.setBounds(181, 120, 168, 26);
-		contentPane.add(textCodPedido);
-		textCodPedido.setColumns(10);
+		textPPnome = new JTextField();
+		textPPnome.setEditable(false);
+		textPPnome.setBounds(181, 120, 168, 26);
+		contentPane.add(textPPnome);
+		textPPnome.setColumns(10);
 		
 		JButton btnppProxpedido = new JButton("Pr\u00F3ximo");
+		btnppProxpedido.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				aleatorio x = new aleatorio();
+				textPPcodped.setText(String.valueOf(x.getCodpedidordm()));
+				textPPnome.setText(x.getP());
+				textPPlivro.setText(x.getL());
+	            textPPqtde.setText(String.valueOf(x.getQtderdm()));
+	            textPPcep.setText(String.valueOf(x.getCeprdm()));
+	            textPPfrete.setText(String.valueOf(x.getFreterdm()));
+	            textPPprecot.setText(String.valueOf(x.getPrecotrdm()));
+			}
+		});
 		btnppProxpedido.setForeground(Color.WHITE);
 		btnppProxpedido.setFont(new Font("Bookman Old Style", Font.BOLD, 16));
 		btnppProxpedido.setBackground(new Color(0, 153, 255));
@@ -74,11 +93,11 @@ public class frameProximoped extends JFrame {
 		lblNewLabel_1.setBounds(44, 120, 111, 26);
 		contentPane.add(lblNewLabel_1);
 		
-		textField = new JTextField();
-		textField.setEditable(false);
-		textField.setColumns(10);
-		textField.setBounds(181, 83, 168, 26);
-		contentPane.add(textField);
+		textPPcodped = new JTextField();
+		textPPcodped.setEditable(false);
+		textPPcodped.setColumns(10);
+		textPPcodped.setBounds(181, 83, 168, 26);
+		contentPane.add(textPPcodped);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("N\u00BA Pedido");
 		lblNewLabel_1_1.setForeground(Color.WHITE);
@@ -86,23 +105,23 @@ public class frameProximoped extends JFrame {
 		lblNewLabel_1_1.setBounds(44, 83, 98, 26);
 		contentPane.add(lblNewLabel_1_1);
 		
-		textField_1 = new JTextField();
-		textField_1.setEditable(false);
-		textField_1.setColumns(10);
-		textField_1.setBounds(181, 157, 168, 102);
-		contentPane.add(textField_1);
+		textPPlivro = new JTextField();
+		textPPlivro.setEditable(false);
+		textPPlivro.setColumns(10);
+		textPPlivro.setBounds(181, 157, 168, 26);
+		contentPane.add(textPPlivro);
 		
-		JLabel lblNewLabel_1_2 = new JLabel("Descri\u00E7\u00E3o Pedido");
+		JLabel lblNewLabel_1_2 = new JLabel("Livro");
 		lblNewLabel_1_2.setForeground(Color.WHITE);
 		lblNewLabel_1_2.setFont(new Font("Bookman Old Style", Font.BOLD, 14));
 		lblNewLabel_1_2.setBounds(44, 157, 127, 26);
 		contentPane.add(lblNewLabel_1_2);
 		
-		textField_2 = new JTextField();
-		textField_2.setEditable(false);
-		textField_2.setColumns(10);
-		textField_2.setBounds(181, 270, 168, 26);
-		contentPane.add(textField_2);
+		textPPfrete = new JTextField();
+		textPPfrete.setEditable(false);
+		textPPfrete.setColumns(10);
+		textPPfrete.setBounds(181, 270, 168, 26);
+		contentPane.add(textPPfrete);
 		
 		JLabel lblNewLabel_1_3 = new JLabel("Frete");
 		lblNewLabel_1_3.setForeground(Color.WHITE);
@@ -110,11 +129,11 @@ public class frameProximoped extends JFrame {
 		lblNewLabel_1_3.setBounds(44, 270, 98, 26);
 		contentPane.add(lblNewLabel_1_3);
 		
-		textField_3 = new JTextField();
-		textField_3.setEditable(false);
-		textField_3.setColumns(10);
-		textField_3.setBounds(181, 307, 168, 26);
-		contentPane.add(textField_3);
+		textPPprecot = new JTextField();
+		textPPprecot.setEditable(false);
+		textPPprecot.setColumns(10);
+		textPPprecot.setBounds(181, 307, 168, 26);
+		contentPane.add(textPPprecot);
 		
 		JLabel lblNewLabel_1_4 = new JLabel("Pre\u00E7o Total");
 		lblNewLabel_1_4.setForeground(Color.WHITE);
@@ -129,13 +148,6 @@ public class frameProximoped extends JFrame {
 		btnppConfirmar.setBounds(222, 378, 127, 29);
 		contentPane.add(btnppConfirmar);
 		
-		JButton btnppCancelar = new JButton("Cancelar");
-		btnppCancelar.setForeground(Color.WHITE);
-		btnppCancelar.setFont(new Font("Bookman Old Style", Font.BOLD, 16));
-		btnppCancelar.setBackground(Color.RED);
-		btnppCancelar.setBounds(222, 428, 127, 29);
-		contentPane.add(btnppCancelar);
-		
 		JButton btnppAbastecer = new JButton("Abastecer");
 		btnppAbastecer.setForeground(Color.WHITE);
 		btnppAbastecer.setFont(new Font("Bookman Old Style", Font.BOLD, 16));
@@ -147,7 +159,31 @@ public class frameProximoped extends JFrame {
 		btnppVoltar.setForeground(Color.WHITE);
 		btnppVoltar.setFont(new Font("Bookman Old Style", Font.BOLD, 16));
 		btnppVoltar.setBackground(new Color(0, 153, 255));
-		btnppVoltar.setBounds(138, 482, 121, 29);
+		btnppVoltar.setBounds(222, 428, 127, 29);
 		contentPane.add(btnppVoltar);
+		
+		textPPqtde = new JTextField();
+		textPPqtde.setEditable(false);
+		textPPqtde.setColumns(10);
+		textPPqtde.setBounds(181, 194, 168, 26);
+		contentPane.add(textPPqtde);
+		
+		JLabel lblNewLabel_1_2_1 = new JLabel("Quantidade");
+		lblNewLabel_1_2_1.setForeground(Color.WHITE);
+		lblNewLabel_1_2_1.setFont(new Font("Bookman Old Style", Font.BOLD, 14));
+		lblNewLabel_1_2_1.setBounds(44, 194, 127, 26);
+		contentPane.add(lblNewLabel_1_2_1);
+		
+		textPPcep = new JTextField();
+		textPPcep.setEditable(false);
+		textPPcep.setColumns(10);
+		textPPcep.setBounds(181, 231, 168, 26);
+		contentPane.add(textPPcep);
+		
+		JLabel lblNewLabel_1_2_2 = new JLabel("Cep");
+		lblNewLabel_1_2_2.setForeground(Color.WHITE);
+		lblNewLabel_1_2_2.setFont(new Font("Bookman Old Style", Font.BOLD, 14));
+		lblNewLabel_1_2_2.setBounds(44, 231, 127, 26);
+		contentPane.add(lblNewLabel_1_2_2);
 	}
 }
