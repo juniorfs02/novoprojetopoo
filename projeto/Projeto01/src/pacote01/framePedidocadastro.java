@@ -132,6 +132,7 @@ public class framePedidocadastro extends JFrame {
 		        a.setValortotal(Float.parseFloat(textCPprecot.getText()));
 		        try {
 		            a.Incluir();
+		            
 		        } catch (SQLException ex) {
 		            JOptionPane.showMessageDialog(null, ex);
 		        }
@@ -178,6 +179,14 @@ public class framePedidocadastro extends JFrame {
 		contentPane.add(textCPlivro);
 		
 		JButton btnCPbuscacep = new JButton("New button");
+		btnCPbuscacep.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				buscaCep b = new buscaCep();
+				b.cepcliente = textCPcep.getText();
+				b.calcularFrete();
+				textCPfrete.setText(String.valueOf(b.valordofrete));
+			}
+		});
 		btnCPbuscacep.setBackground(new Color(0, 153, 255));
 		btnCPbuscacep.setBounds(358, 236, 27, 23);
 		contentPane.add(btnCPbuscacep);

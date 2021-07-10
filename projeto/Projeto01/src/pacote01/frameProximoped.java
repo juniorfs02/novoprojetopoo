@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
-
+import java.util.Random;
 public class frameProximoped extends JFrame {
 
 	private JPanel contentPane;
@@ -65,14 +65,20 @@ public class frameProximoped extends JFrame {
 		JButton btnppProxpedido = new JButton("Pr\u00F3ximo");
 		btnppProxpedido.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				aleatorio x = new aleatorio();
-				textPPcodped.setText(String.valueOf(x.getCodpedidordm()));
-				textPPnome.setText(x.getP());
-				textPPlivro.setText(x.getL());
-	            textPPqtde.setText(String.valueOf(x.getQtderdm()));
-	            textPPcep.setText(String.valueOf(x.getCeprdm()));
-	            textPPfrete.setText(String.valueOf(x.getFreterdm()));
-	            textPPprecot.setText(String.valueOf(x.getPrecotrdm()));
+				Aleatorio01 x = new Aleatorio01();
+				if(textPPcodped.getText().trim().isEmpty())
+	                x.setCodpedidordm(0);
+	            else
+	                x.setCodpedidordm(Integer.parseInt(textPPcodped.getText()));
+	        x.Aleatoriox();
+			textPPcodped.setText(Integer.toString(x.getCodpedidordm()));
+			textPPnome.setText(x.getP());
+			textPPlivro.setText(x.getL());
+			textPPqtde.setText(String.valueOf(x.getQtderdm()));
+			textPPcep.setText(String.valueOf(x.getCeprdm()));
+			textPPfrete.setText(String.valueOf(x.getFreterdm()));
+			textPPprecot.setText(String.valueOf(x.getPrecotrdm()));
+	            
 			}
 		});
 		btnppProxpedido.setForeground(Color.WHITE);
@@ -142,6 +148,23 @@ public class frameProximoped extends JFrame {
 		contentPane.add(lblNewLabel_1_4);
 		
 		JButton btnppConfirmar = new JButton("Confirmar ");
+		btnppConfirmar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Aleatorio01 a = new Aleatorio01();
+		        a.setCodpedidordm(Integer.parseInt(textPPcodped.getText()));
+		        a.setP(textPPnome.getText());
+		        a.setL(textPPlivro.getText());
+		        a.setQtderdm(Integer.parseInt(textPPqtde.getText()));
+		        a.setCeprdm(Integer.parseInt(textPPcep.getText()));
+		        a.setFreterdm(Integer.parseInt(textPPfrete.getText()));
+		        a.setPrecotrdm(Integer.parseInt(textPPprecot.getText()));
+		        try {
+		            a.Incluir1();
+		        } catch (SQLException ex) {
+		            JOptionPane.showMessageDialog(null, ex);
+		        }
+			}
+		});
 		btnppConfirmar.setForeground(Color.WHITE);
 		btnppConfirmar.setFont(new Font("Bookman Old Style", Font.BOLD, 16));
 		btnppConfirmar.setBackground(new Color(0, 153, 0));
@@ -156,6 +179,11 @@ public class frameProximoped extends JFrame {
 		contentPane.add(btnppAbastecer);
 		
 		JButton btnppVoltar = new JButton("Voltar");
+		btnppVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+			}
+		});
 		btnppVoltar.setForeground(Color.WHITE);
 		btnppVoltar.setFont(new Font("Bookman Old Style", Font.BOLD, 16));
 		btnppVoltar.setBackground(new Color(0, 153, 255));

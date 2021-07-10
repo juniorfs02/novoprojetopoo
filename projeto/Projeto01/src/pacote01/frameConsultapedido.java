@@ -181,6 +181,11 @@ public class frameConsultapedido extends JFrame {
 		contentPane.add(btnppConfirmar);
 		
 		JButton btncpVoltar = new JButton("Voltar");
+		btncpVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
 		btncpVoltar.setForeground(Color.WHITE);
 		btncpVoltar.setFont(new Font("Bookman Old Style", Font.BOLD, 16));
 		btncpVoltar.setBackground(new Color(0, 153, 255));
@@ -188,6 +193,23 @@ public class frameConsultapedido extends JFrame {
 		contentPane.add(btncpVoltar);
 		
 		JButton btncpExcluir = new JButton("Excluir");
+		btncpExcluir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Pedidocadastroexe a = new Pedidocadastroexe();
+		        a.setCodpedido(Integer.parseInt(textCOpedido.getText()));
+		        try {
+		            a.Excluir1();
+		            textCOnome.setEditable(true);
+		            textCOfrete.setEditable(true);
+		            textCOprecot.setEditable(true);
+		            textCOlivro.setEditable(true);
+		            textCOcep.setEditable(true);
+		            textCOqtde.setEditable(true);
+		        } catch (SQLException ex) {
+		            JOptionPane.showMessageDialog(null, ex);
+		        }
+			}
+		});
 		btncpExcluir.setForeground(Color.WHITE);
 		btncpExcluir.setFont(new Font("Bookman Old Style", Font.BOLD, 16));
 		btncpExcluir.setBackground(Color.RED);
@@ -200,7 +222,9 @@ public class frameConsultapedido extends JFrame {
 				Pedidocadastroexe a = new Pedidocadastroexe();
 		        a.setCodpedido(Integer.parseInt(textCOpedido.getText()));
 		        a.setNomecliente(textCOnome.getText());
-		        
+		        a.setNomelivro(textCOlivro.getText());
+		        a.setQtde(Integer.parseInt(textCOqtde.getText()));
+		        a.setCep(Integer.parseInt(textCOcep.getText()));
 		        a.setValorfrete(Float.parseFloat(textCOfrete.getText()));
 		        a.setValortotal(Float.parseFloat(textCOprecot.getText()));
 		        try {
