@@ -171,13 +171,6 @@ public class frameProximoped extends JFrame {
 		btnppConfirmar.setBounds(222, 378, 127, 29);
 		contentPane.add(btnppConfirmar);
 		
-		JButton btnppAbastecer = new JButton("Abastecer");
-		btnppAbastecer.setForeground(Color.WHITE);
-		btnppAbastecer.setFont(new Font("Bookman Old Style", Font.BOLD, 16));
-		btnppAbastecer.setBackground(new Color(0, 153, 255));
-		btnppAbastecer.setBounds(44, 428, 127, 29);
-		contentPane.add(btnppAbastecer);
-		
 		JButton btnppVoltar = new JButton("Voltar");
 		btnppVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -187,7 +180,7 @@ public class frameProximoped extends JFrame {
 		btnppVoltar.setForeground(Color.WHITE);
 		btnppVoltar.setFont(new Font("Bookman Old Style", Font.BOLD, 16));
 		btnppVoltar.setBackground(new Color(0, 153, 255));
-		btnppVoltar.setBounds(222, 428, 127, 29);
+		btnppVoltar.setBounds(136, 429, 127, 29);
 		contentPane.add(btnppVoltar);
 		
 		textPPqtde = new JTextField();

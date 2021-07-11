@@ -34,8 +34,8 @@ public class Aleatorio01 {
 		ceprdm = aleatorio.nextInt((19999999 - 10000001) + 1) + 10000001;
 		freterdm = aleatorio.nextInt((3) + 2) *5 ;
 		precotrdm = (qtderdm * 10 + freterdm);
-		String Pessoa[] = { "João Felipe Medeiros", "Pedro Costa", "Caio Mazola Hatae", "Sabrina Ferraz", "Damaris Santos", "Evelyn Reis", "Nilza Virginia", "Francisco Matarazzo"  };
-		String Livrordm[] = { "O Homem de Giz", "A Garota do Lago", "Duna", "O Colecionador", "O Hobbit", "Dom Quixote", "Pessoas Normais", "Um Conto de Duas Cidades"  };
+		String Pessoa[] = { "João Felipe Medeiros", "Pedro Costa", "Caio Mazola Hatae","Miguel Obadias","Cleber Ribeiro","Luiza Santos","Gertrudes Pinheiro", "Sabrina Ferraz", "Damaris Santos", "Evelyn Reis", "Nilza Virginia", "Francisco Matarazzo","Felipe Damasceno"  };
+		String Livrordm[] = { "O Homem de Giz", "A Garota do Lago", "Duna", "O Colecionador", "O Hobbit", "Dom Quixote", "Pessoas Normais", "Um Conto de Duas Cidades"};
 		
 		 p = Pessoa[aleatorio.nextInt(Pessoa.length)];
 		 l = Livrordm[aleatorio.nextInt(Livrordm.length)];

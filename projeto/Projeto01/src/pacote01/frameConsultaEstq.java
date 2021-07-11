@@ -69,97 +69,92 @@ public class frameConsultaEstq extends JFrame {
 		lblCdigo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCdigo.setForeground(Color.WHITE);
 		lblCdigo.setFont(new Font("Bookman Old Style", Font.BOLD, 16));
-		lblCdigo.setBounds(18, 86, 69, 42);
+		lblCdigo.setBounds(40, 86, 69, 42);
 		contentPane.add(lblCdigo);
 		
 		JLabel lblGnero = new JLabel("Editora");
 		lblGnero.setHorizontalAlignment(SwingConstants.CENTER);
 		lblGnero.setForeground(Color.WHITE);
 		lblGnero.setFont(new Font("Bookman Old Style", Font.BOLD, 16));
-		lblGnero.setBounds(97, 86, 69, 42);
+		lblGnero.setBounds(119, 86, 69, 42);
 		contentPane.add(lblGnero);
 		
 		JLabel lblGnero_1 = new JLabel("G\u00EAnero");
 		lblGnero_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblGnero_1.setForeground(Color.WHITE);
 		lblGnero_1.setFont(new Font("Bookman Old Style", Font.BOLD, 16));
-		lblGnero_1.setBounds(184, 86, 69, 42);
+		lblGnero_1.setBounds(206, 86, 69, 42);
 		contentPane.add(lblGnero_1);
 		
 		JLabel lblAno = new JLabel("Ano");
 		lblAno.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAno.setForeground(Color.WHITE);
 		lblAno.setFont(new Font("Bookman Old Style", Font.BOLD, 16));
-		lblAno.setBounds(271, 86, 69, 42);
+		lblAno.setBounds(293, 86, 69, 42);
 		contentPane.add(lblAno);
 		
 		JLabel lblLivro = new JLabel("Livro");
 		lblLivro.setHorizontalAlignment(SwingConstants.CENTER);
 		lblLivro.setForeground(Color.WHITE);
 		lblLivro.setFont(new Font("Bookman Old Style", Font.BOLD, 16));
-		lblLivro.setBounds(358, 86, 69, 42);
+		lblLivro.setBounds(380, 86, 69, 42);
 		contentPane.add(lblLivro);
 		
 		JLabel lblCdigo_4_1 = new JLabel("Pre\u00E7o");
 		lblCdigo_4_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCdigo_4_1.setForeground(Color.WHITE);
 		lblCdigo_4_1.setFont(new Font("Bookman Old Style", Font.BOLD, 16));
-		lblCdigo_4_1.setBounds(447, 86, 69, 42);
+		lblCdigo_4_1.setBounds(469, 86, 69, 42);
 		contentPane.add(lblCdigo_4_1);
 		
 		JLabel lblCdigo_4_2 = new JLabel("Qtde");
 		lblCdigo_4_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCdigo_4_2.setForeground(Color.WHITE);
 		lblCdigo_4_2.setFont(new Font("Bookman Old Style", Font.BOLD, 16));
-		lblCdigo_4_2.setBounds(536, 86, 69, 42);
+		lblCdigo_4_2.setBounds(558, 86, 69, 42);
 		contentPane.add(lblCdigo_4_2);
 		
 		textcod1 = new JTextField();
 		textcod1.setEditable(false);
-		textcod1.setBounds(10, 139, 77, 26);
+		textcod1.setBounds(40, 139, 77, 26);
 		contentPane.add(textcod1);
 		textcod1.setColumns(10);
 		
 		textedit1 = new JTextField();
 		textedit1.setEditable(false);
 		textedit1.setColumns(10);
-		textedit1.setBounds(97, 139, 77, 26);
+		textedit1.setBounds(127, 139, 77, 26);
 		contentPane.add(textedit1);
 		
 		textgen1 = new JTextField();
 		textgen1.setEditable(false);
 		textgen1.setColumns(10);
-		textgen1.setBounds(184, 139, 77, 26);
+		textgen1.setBounds(214, 139, 77, 26);
 		contentPane.add(textgen1);
 		
 		textano1 = new JTextField();
 		textano1.setEditable(false);
 		textano1.setColumns(10);
-		textano1.setBounds(271, 139, 77, 26);
+		textano1.setBounds(301, 139, 77, 26);
 		contentPane.add(textano1);
 		
 		textlivro1 = new JTextField();
 		textlivro1.setEditable(false);
 		textlivro1.setColumns(10);
-		textlivro1.setBounds(358, 139, 77, 26);
+		textlivro1.setBounds(388, 139, 77, 26);
 		contentPane.add(textlivro1);
 		
 		textpreco1 = new JTextField();
 		textpreco1.setEditable(false);
 		textpreco1.setColumns(10);
-		textpreco1.setBounds(447, 139, 77, 26);
+		textpreco1.setBounds(477, 139, 77, 26);
 		contentPane.add(textpreco1);
 		
 		textqtde1 = new JTextField();
 		textqtde1.setEditable(false);
 		textqtde1.setColumns(10);
-		textqtde1.setBounds(536, 139, 77, 26);
+		textqtde1.setBounds(566, 139, 77, 26);
 		contentPane.add(textqtde1);
-		
-		JButton btnadd1 = new JButton("+");
-		btnadd1.setBackground(new Color(0, 153, 0));
-		btnadd1.setBounds(639, 141, 43, 23);
-		contentPane.add(btnadd1);
 		
 		JButton btnNewButton_7 = new JButton("Alterar");
 		btnNewButton_7.addActionListener(new ActionListener() {

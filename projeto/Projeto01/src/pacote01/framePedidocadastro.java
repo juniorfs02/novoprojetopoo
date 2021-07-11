@@ -15,6 +15,7 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.awt.event.ActionEvent;
 
 public class framePedidocadastro extends JFrame {
@@ -123,12 +124,13 @@ public class framePedidocadastro extends JFrame {
 		btnCPconfirmar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Pedidocadastroexe a = new Pedidocadastroexe();
-		        a.setCodpedido(Integer.parseInt(textCPcodped.getText()));
+				
+				a.setCodpedido(Integer.parseInt(textCPcodped.getText()));
 		        a.setNomecliente(textCPnome.getText());
 		        a.setNomelivro(textCPlivro.getText());
 		        a.setQtde(Integer.parseInt(textCPqtde.getText()));
 		        a.setCep(Integer.parseInt(textCPcep.getText()));
-		        a.setValorfrete(Float.parseFloat(textCPfrete.getText()));
+		        a.setValorfrete(Float.parseFloat(textCPfrete.getText().replaceAll(",", ".")));
 		        a.setValortotal(Float.parseFloat(textCPprecot.getText()));
 		        try {
 		            a.Incluir();
@@ -178,7 +180,7 @@ public class framePedidocadastro extends JFrame {
 		textCPlivro.setBounds(181, 157, 168, 26);
 		contentPane.add(textCPlivro);
 		
-		JButton btnCPbuscacep = new JButton("New button");
+		JButton btnCPbuscacep = new JButton("");
 		btnCPbuscacep.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				buscaCep b = new buscaCep();

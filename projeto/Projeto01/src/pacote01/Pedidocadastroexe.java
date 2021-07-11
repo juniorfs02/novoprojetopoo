@@ -13,7 +13,8 @@ import com.mysql.jdbc.Connection;
 public class Pedidocadastroexe {
 	private int codpedido, qtde, cep, codlivro, anolivro, qtdeestq;
     private String nomecliente, nomelivro, editoralivro, generolivro;
-    private float valorfrete, valortotal, precount;
+    private float valorfrete,  precount;
+    private float valortotal = ((precount*qtde) + valorfrete);
     
 	
 	
@@ -25,8 +26,7 @@ public class Pedidocadastroexe {
         String Sql = "insert into tbteste values(" + getCodpedido() + ",'" 
                 + getNomecliente() + "','" + getNomelivro() + "','" + getQtde() + "','" + getCep()  + "','" + getValorfrete() + "'," + getValortotal()  + ")";
         
-        Sql = "insert into cliente (codPedido, nomeCliente, cepCliente) values(" + getCodpedido() + ",'" 
-                + getCep() +  "'," + getNomecliente()  + ")";
+       
         PreparedStatement comando = (PreparedStatement) conn.prepareStatement(Sql);
         comando.execute();
         comando.close();
@@ -119,6 +119,8 @@ public class Pedidocadastroexe {
         comando.close();
         conn.close();
     }
+	
+	
 	
 	public void Excluir() throws SQLException {
         String usuario = "root";
